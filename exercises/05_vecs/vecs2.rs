@@ -25,13 +25,26 @@ fn vec_map(input: &[i32]) -> Vec<i32> {
     input
         .iter()
         .map(|element| {
-            // ???
+            *element * 2
         })
         .collect()
 }
 
 fn main() {
     // You can optionally experiment here.
+    // Run the tests with `cargo test`.
+
+    let input = [2, 4, 6, 8, 10];
+    let ans = vec_loop(&input);
+    println!("{:?}", ans);
+
+    let input = [2, 4, 6, 8, 10];
+    let ans = vec_map(&input);
+    println!("{:?}", ans);
+
+    let input = [1, 2, 3];
+    let ans = vec_map_example(&input);
+    println!("{:?}", ans);
 }
 
 #[cfg(test)]
