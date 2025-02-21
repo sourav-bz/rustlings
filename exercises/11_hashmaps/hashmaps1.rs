@@ -10,8 +10,12 @@ fn fruit_basket() -> HashMap<String, u32> {
     // TODO: Declare the hash map.
     // let mut basket =
 
+    let mut basket = HashMap::new();
     // Two bananas are already given for you :)
     basket.insert(String::from("banana"), 2);
+    basket.insert("Apple".to_string(), 1);
+    basket.insert("Mango".to_string(), 2);
+    basket.insert("Orange".to_string(), 1);
 
     // TODO: Put more fruits in your basket.
 
