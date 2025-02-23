@@ -12,14 +12,24 @@
 // block to support alphabetical report cards in addition to numerical ones.
 
 // TODO: Adjust the struct as described above.
-struct ReportCard {
-    grade: f32,
+
+use std::fmt::{Debug, Display};
+
+// Define a trait that ensures common behavior
+trait MyType: Debug + Display {}
+
+// Implement the trait for f32, f64, and char
+impl MyType for f32 {}
+impl MyType for &str {}
+
+struct ReportCard<T: MyType> {
+    grade: T,
     student_name: String,
     student_age: u8,
 }
 
 // TODO: Adjust the impl block as described above.
-impl ReportCard {
+impl<T: MyType> ReportCard<T> {
     fn print(&self) -> String {
         format!(
             "{} ({}) - achieved a grade of {}",
